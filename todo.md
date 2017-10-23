@@ -7,7 +7,8 @@
 |       |       |Learn markdown + create todo list|
 |       |       |Install Docker| 
 |       |       |Write Docker installation tutorial| 
-|Learn to use Docker| | |
+|       |       |Create Docker installation script||
+|       |Learn to use Docker| |
 |Install ROS2| | |
 |Write ROS2 installation tutorial| | |
 |Learn theory around ROS2| | |
