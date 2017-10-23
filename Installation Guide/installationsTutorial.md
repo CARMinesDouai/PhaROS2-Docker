@@ -2,6 +2,7 @@
 This tutorial assumes that your system is Ubuntu, with the Xenial version or a more recent one.    
 For some of the steps you have the option to use a script (found on this repository) rather than the command lines.
 ## Docker installation
+*My sources were the [official installation guide](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu) and the [proxy configuration guide](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy).*
 ### Through script
 Download the `docker-install.sh` script and use it the following way:
 ```bash
@@ -38,7 +39,11 @@ $ exit
 $ sudo systemctl daemon-reload 
 $ sudo systemctl restart docker 
 ```
-
+Finally if you want docker to start on boot:  
+```bash
+$ sudo systemctl enable docker
+```
+### Checking that docker works correctly
 The following command is to verify that docker is running correctly (by using a 'hello world' image)    
  ```bash
  $ sudo docker run hello-world
@@ -48,7 +53,3 @@ The following command is to verify that docker is running correctly (by using a 
     Hello from Docker!
     This message shows that your installation appears to be working correctly.
 ```
-
-Finally if you want docker to start on boot, don't forget `$ sudo systemctl enable docker` !
-
-*My sources were the [official installation guide](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu) and the [proxy configuration guide](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy).*
