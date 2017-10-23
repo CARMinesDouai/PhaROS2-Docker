@@ -1,6 +1,15 @@
 # How to install the needed tools
-This tutorial assumes that your system is Ubuntu, with the Xenial version or a more recent one.
+This tutorial assumes that your system is Ubuntu, with the Xenial version or a more recent one.    
+For some of the steps you have the option to use a script (found on this repository) rather than the command lines.
 ## Docker installation
+### Through script
+Download the `docker-install.sh` script and use it the following way:
+```bash
+$ bash docker-install.sh -e -p A.B.C.D:PORT
+```
+The `-e` option is to enable docker to start on boot.    
+The `-p` option is to set a proxy for docker if needed, of course **change `A.B.C.D:PORT` to your http proxy**.
+### Through commands
 These are the commands for the core installation of docker:
 ```bash
 $ sudo apt-get update 
@@ -17,7 +26,7 @@ $ sudo apt-get update
 $ sudo apt-get install docker-ce 
 ```
 
-These are the commands to configure the docker proxy if needed, of course **change "A.B.C.D:PORT" to your http proxy**
+These are the commands to configure the docker proxy if needed, of course **change `A.B.C.D:PORT` to your http proxy**
 ```bash
 $ sudo mkdir -p /etc/systemd/system/docker.service.d
 $ sudo su
