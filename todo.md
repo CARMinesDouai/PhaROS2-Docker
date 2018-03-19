@@ -16,3 +16,10 @@
 |Write Simulators installation tutorial| | |
 |Learn to use ROS2 with TurtleBot| | |
 |Write TurtleBot ROS2 tutorial| | |
+
+## PhaROS2 client developpement
+
+| TO DO | DOING | DONE |
+|-------|-------|------|
+|Study ROS2 Client API| | |
+|Present what needs to be developped| | |
