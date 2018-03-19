@@ -9,7 +9,7 @@
 |       |       |Write Docker installation tutorial| 
 |       |       |Create Docker installation script||
 |       |Learn to use Docker| |
-|Install ROS2| | |
+| | |Install ROS2 on a Docker container|
 |Write ROS2 installation tutorial| | |
 | |Learn theory around ROS2| |
 |Install Simulators| | |
