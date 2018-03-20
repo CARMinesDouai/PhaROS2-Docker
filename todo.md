@@ -21,5 +21,5 @@
 
 | TO DO | DOING | DONE |
 |-------|-------|------|
-|Study ROS2 Client API| | |
+| |Study ROS2 Client API| |
 |Present what needs to be developped| | |
