@@ -11,7 +11,7 @@
 |       |Learn to use Docker| |
 | | |Install ROS2 on a Docker container|
 |Write ROS2 installation tutorial| | |
-| |Learn theory around ROS2| |
+| | |Learn theory around ROS2|
 |Install Simulators| | |
 |Write Simulators installation tutorial| | |
 |Learn to use ROS2 with TurtleBot| | |
