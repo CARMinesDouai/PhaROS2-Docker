@@ -25,7 +25,7 @@ sudo add-apt-repository "deb [arch=$(arch)] https://download.docker.com/linux/ub
 sudo apt-get update 
 sudo apt-get install docker-ce 
 
-#Commands to configure the docker proxy if needed:
+#Commands to configure the proxies if needed:
 if test $PROXY;
 	then
 		#daemon proxy configuration
