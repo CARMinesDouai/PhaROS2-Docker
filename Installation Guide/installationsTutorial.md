@@ -30,15 +30,16 @@ $ sudo apt-get install docker-ce
 These are the commands to configure the docker proxy if needed, of course **change `A.B.C.D:PORT` to your http proxy**
 ```bash
 #daemon proxy configuration
-		sudo mkdir -p /etc/systemd/system/docker.service.d
-		echo '[Service]
+sudo mkdir -p /etc/systemd/system/docker.service.d
+echo '[Service]
 Environment="HTTP_PROXY=http://A.B.C.D:PORT/" "NO_PROXY=localhost"' | sudo tee /etc/systemd/system/docker.service.d/http-proxy.conf > /dev/null
-		echo '[Service]
+echo '[Service]
 Environment="HTTPS_PROXY=https://A.B.C.D:PORT/" "NO_PROXY=localhost"' | sudo tee /etc/systemd/system/docker.service.d/https-proxy.conf > /dev/null
-		sudo systemctl daemon-reload 
-		sudo systemctl restart docker 
-		#containers proxy configuration
-		echo '{
+sudo systemctl daemon-reload 
+sudo systemctl restart docker 
+		
+#containers proxy configuration
+echo '{
  "proxies":
  {
    "default":
