@@ -10,12 +10,14 @@
 |       |       |Create Docker installation script||
 |       |       |Learn to use Docker|
 |       |       |Install ROS2 on a Docker container|
-|Write ROS2 installation tutorial| | |
 |       |       |Learn theory around ROS2|
+|       |Create a Dockerfile for an image withROS2| |
+|Upload ROS2 Dockerfile| | |
+|       |Setup a Turtlebot demo with ROS2| |
+|       |Create a Dockerfile for an image withROS2| |
+|Upload ROS2 Turtlebot demo Dockerfile| | |
 |Install Simulators| | |
 |Write Simulators installation tutorial| | |
-| |Learn to use ROS2 with TurtleBot| |
-|Write TurtleBot ROS2 tutorial| | |
 
 ## PhaROS2 client developpement
 
