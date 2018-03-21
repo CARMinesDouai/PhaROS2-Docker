@@ -11,10 +11,10 @@
 |       |       |Learn to use Docker|
 |       |       |Install ROS2 on a Docker container|
 |       |       |Learn theory around ROS2|
-|       |Create a Dockerfile for an image withROS2| |
+|       |Create a Dockerfile for an image with ROS2| |
 |Upload ROS2 Dockerfile| | |
 |       |Setup a Turtlebot demo with ROS2| |
-|       |Create a Dockerfile for an image withROS2| |
+|       |Create a Dockerfile for an image with ROS2| |
 |Upload ROS2 Turtlebot demo Dockerfile| | |
 |Install Simulators| | |
 |Write Simulators installation tutorial| | |
