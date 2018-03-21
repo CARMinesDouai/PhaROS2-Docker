@@ -14,7 +14,7 @@
 |       |       |Learn theory around ROS2|
 |Install Simulators| | |
 |Write Simulators installation tutorial| | |
-|Learn to use ROS2 with TurtleBot| | |
+| |Learn to use ROS2 with TurtleBot| |
 |Write TurtleBot ROS2 tutorial| | |
 
 ## PhaROS2 client developpement
