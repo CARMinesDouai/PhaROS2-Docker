@@ -4,7 +4,7 @@ For some of the steps you have the option to use a script (found on this reposit
 ## Docker installation
 *My sources were the [official installation guide](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu), the [docker daemon proxy configuration guide](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) and the [docker containers proxy configuration guide](https://docs.docker.com/network/proxy/#configure-the-docker-client).*
 ### Through script
-Download the `docker-install.sh` script and use it the following way:
+Download the [docker-install.sh](https://github.com/CARMinesDouai/PhaROS2/blob/master/Docker%20Installation/docker-install.sh) script and use it the following way:
 ```bash
 $ bash docker-install.sh -e -p A.B.C.D:PORT
 ```
