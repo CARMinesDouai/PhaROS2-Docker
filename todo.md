@@ -14,7 +14,7 @@
 |       |Setup a Turtlebot demo with ROS2| |
 |       |Write tutorial to setup a Turtlebot demo with ROS2| |
 |       |       |Create a ROS2 Turtlebot demo Dockerfile|
-|       |Upload ROS2 Turtlebot demo Dockerfile| |
+|       |       |Upload ROS2 Turtlebot demo Dockerfile|
 |Install Simulators| | |
 |Write Simulators installation tutorial| | |
 
