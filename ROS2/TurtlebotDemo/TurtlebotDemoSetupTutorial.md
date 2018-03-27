@@ -33,7 +33,8 @@ When this step is correctly done the ros2 turtlebot teleop demo launchs, allowin
 ### Extra: Xbox 360 Controller Handling 
 The [original demo](https://github.com/ros2/turtlebot2_demo) assumes you are using a logitech controller as a joystick, but you can use other joysticks aswell. However the button mapping will differ from one controller to another.  
 
-Here is a guide on how to use a Xbox 360 controller to pilot the turtlebot. Warning: by default it is a quite weird button mapping ! 
+Here is a guide on how to use a Xbox 360 controller to pilot the turtlebot.  
+*Warning: by default it is a quite weird button mapping !* 
 - First you need to press "RT" (Right Trigger) to unlock the turtlebot wheels.
 - "RB" (Right Button) will move the turtlebot forward.
 - "RB"+"RT" will move the turtlebot backward.
