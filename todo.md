@@ -11,7 +11,7 @@
 |       |       |Learn to use Docker|
 |       |       |Install ROS2 on a Docker container|
 |       |       |Learn theory around ROS2|
-|       |Setup a Turtlebot demo with ROS2| |
+|       |       |Setup a Turtlebot demo with ROS2|
 |       |Write tutorial to setup a Turtlebot demo with ROS2| |
 |       |       |Create a ROS2 Turtlebot demo Dockerfile|
 |       |       |Upload ROS2 Turtlebot demo Dockerfile|
