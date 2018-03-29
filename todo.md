@@ -18,9 +18,17 @@
 |Install Simulators| | |
 |Write Simulators installation tutorial| | |
 
+## Mapping and Guidance of a Turtlebot with ROS
+
+| TO DO | DOING | DONE |
+|-------|-------|------|
+|       |Install packages for demo|      |
+|Following demo of Turtlebot mapping|       |      | 
+|Placing Way Points on a generated map|       |      | 
+
 ## PhaROS2 client developpement
 
 | TO DO | DOING | DONE |
 |-------|-------|------|
-| |Study ROS2 Client API| |
-|Present what needs to be developped| | |
+|       |Study ROS2 Client API|       |
+|Present what needs to be developped|       |       |
