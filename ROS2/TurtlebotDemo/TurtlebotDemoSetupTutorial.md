@@ -1,4 +1,7 @@
 # How to set-up a TurtlebotDemo with ROS2 and Docker
+This tutorial assumes that your system is Ubuntu, with the Xenial version or a more recent one.  
+
+## Sources
 *My sources were the [ROS2 installation guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians) and the [ROS2 Turtlebot demo guide](https://github.com/ros2/turtlebot2_demo)*
 
 ## Prerequisites
