@@ -16,4 +16,3 @@ RUN apt-get update && apt-get install -y ros-ardent-turtlebot2* ros-kinetic-kobu
 
 #Environment setup at run start
 RUN sed -i 's/\$ROS_DISTRO/ardent/g; 4 a source "/opt/ros/kinetic/setup.bash"' /ros_entrypoint.sh
-ENTRYPOINT  ["/ros_entrypoint.sh"]
