@@ -1,18 +1,12 @@
 #This Docker image goal is to run a Turtlebot demo with ROS2
+FROM osrf/ros2:ardent-basic
 
-#Built from ros:kinetic to allow access to ROS1 packages needed for Turtlebot demo
-FROM ros:kinetic
+#Setup ROS1 Sources
+RUN apt-get update && apt-get install -y lsb-release
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
-#Setup Sources
-RUN apt-get update && apt-get install -y curl
-RUN curl http://repo.ros2.org/repos.key | apt-key add -
-RUN sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main xenial main" > /etc/apt/sources.list.d/ros2-latest.list'
+#Setup ROS1 Environment at run start
+RUN sed -i '4 a source "/opt/ros/$ROS_DISTRO/setup.bash"' /ros2_entrypoint.sh
 
-#Install ROS2 packages
-RUN apt-get update && apt-get install -y `apt list "ros-ardent-*" 2> /dev/null | grep "/" | awk -F/ '{print $1}' | grep -v -e ros-ardent-ros1-bridge -e ros-ardent-turtlebot2- | tr "\n" " "`
-
-#Turtlebo2 demo specific packages
+#Install Turtlebot demo specific packages
 RUN apt-get update && apt-get install -y ros-ardent-turtlebot2* ros-kinetic-kobuki-ftdi
-
-#Environment setup at run start
-RUN sed -i 's/\$ROS_DISTRO/ardent/g; 4 a source "/opt/ros/kinetic/setup.bash"' /ros_entrypoint.sh
