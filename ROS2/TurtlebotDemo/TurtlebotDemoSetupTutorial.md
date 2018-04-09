@@ -8,15 +8,15 @@ This tutorial assumes that your system is Ubuntu, with the Xenial version or a m
 *My sources were the [ROS2 installation guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians) and the [ROS2 Turtlebot demo guide](https://github.com/ros2/turtlebot2_demo)*
 
 ## Building the ROS2-Turtlebot-Demo image
-Download the [Dockerfile](https://github.com/CARMinesDouai/PhaROS2/blob/master/ROS2/TurtlebotDemo/Dockerfile) and place it in an empty directory on your computer.  
+Download this [Dockerfile](https://github.com/CARMinesDouai/PhaROS2/blob/master/ROS2/TurtlebotDemo/Dockerfile).  
 Then to build the docker image, use the following command :
 ```bash
-$ sudo docker build -t ros2:turtlebotdemo .
+$ sudo docker build -t ros2:turtlebotdemo pathToDockerfileDirectory
 ```
 Command explanation :
-- "ros2" will be the image repository, you can change it if you want.
-- "turtlebotdemo" will be the image tag; you can change it if you want.
-- "." tells the command to use the current context for the build.
+- **"pathToDockerfileDirectory" needs to be replaced by the path to the directory containing the Dockerfile**.
+- "ros2" will be the image repository, you can change this if you want.
+- "turtlebotdemo" will be the image tag; you can change this if you want.
 
 ## Running the ROS2-Turtlebot-Demo container
 Here we are going to create a container from the ROS2-Turtlebot-Demo image and use this container to run the demo launch file.  
@@ -26,8 +26,10 @@ $ sudo docker run -it --rm --device=/dev/input/js0 --device=/dev/kobuki ros2:tur
 ```
 Command explanation :
 - If you build the image with another repository and/or tag, replace "ros2:turtlebotdemo" by "repository:tag".
-- "launch /opt/ros/ardent/share/turtlebot2_teleop/launch/turtlebot_joy.py" is the command run at the start of the container, this one will run the demo launchfile allowing you to pilot the turtlebot with your joystick. *(Note: you can replace this command by "bash" to instead use the bash of the new container after its creation and inspect the container)*.
-- The option "--device=/dev/input/js0 --device=/dev/kobuki" allows the container to access to two device connected to the host: "/dev/input/js0" is the joystick and "/dev/kobuki" is the kobuki turtlebot. **Make sure these are indeed the paths to the devices on your machine !**
+- The option "--device=/dev/input/js0 --device=/dev/kobuki" allows the container to access to two device connected to the host: "/dev/input/js0" is the joystick and "/dev/kobuki" is the kobuki turtlebot.   
+**Make sure these are indeed the paths to the devices on your machine !**
+- "launch /opt/ros/ardent/share/turtlebot2_teleop/launch/turtlebot_joy.py" is the command run at the start of the container, this one will run the demo launchfile allowing you to pilot the turtlebot with your joystick.
+*(Note: you can replace this command by "bash" to instead use the bash of the new container after its creation and inspect the container)*.
 - The option "--rm" will delete the container after it is exited.  
 
 When this step is correctly done the ros2 turtlebot teleop demo launchs, allowing you to pilot the turtlebot with the joystick.
