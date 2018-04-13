@@ -13,7 +13,10 @@ containerId=$(sudo docker container ps -l -q)
 xhost +local:`sudo docker inspect --format='{{ .Config.Hostname }}' $containerId`
 
 #Starting the container in interactive mode
-sudo docker container start -i --rm $containerId
+sudo docker container start -i $containerId
 
 #Closing xhost access opened for the container
 xhost -local:`sudo docker inspect --format='{{ .Config.Hostname }}' $containerId`
+
+#Removing container
+sudo docker container rm $containerId
