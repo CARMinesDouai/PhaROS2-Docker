@@ -22,7 +22,9 @@ Command explanation :
 Here we are going to create a container from the ROS2-Turtlebot-Demo image and use this container to run the demo launch file.  
 To do this use the following command :
 ```bash
-$ sudo docker run -it --rm --device=/dev/input/js0 --device=/dev/kobuki ros2:turtlebotdemo launch /opt/ros/ardent/share/turtlebot2_teleop/launch/turtlebot_joy.py
+$ sudo docker run -it --rm --device=/dev/input/js0 --device=/dev/kobuki \
+  ros2:turtlebotdemo \
+  launch /opt/ros/ardent/share/turtlebot2_teleop/launch/turtlebot_joy.py
 ```
 Command explanation :
 - If you build the image with another repository and/or tag, replace "ros2:turtlebotdemo" by "repository:tag".
