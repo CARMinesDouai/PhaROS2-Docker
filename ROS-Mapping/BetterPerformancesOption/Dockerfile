@@ -1,5 +1,5 @@
 #Docker image for Mapping with a Turtlebot
-FROM osrf/ros:kinetic
+FROM ros:kinetic
 
 #Arguments for building
 ARG PYTHONPATH=/opt/ros/kinetic/lib/python2.7/dist-packages
