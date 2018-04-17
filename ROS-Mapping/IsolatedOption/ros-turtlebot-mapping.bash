@@ -9,7 +9,7 @@ sudo docker container create -it \
     roslaunch adaptive_local_planner simple_exploration_karto.launch
 
 #Opening up xhost to the container, allowing rviz to start its GUI
-containerId=$(sudo docker container ps -l -q)
+containerId=$(sudo docker container ps -l -q --no-trunc)
 xhost +local:`sudo docker inspect --format='{{ .Config.Hostname }}' $containerId`
 
 #Starting the container in interactive mode
