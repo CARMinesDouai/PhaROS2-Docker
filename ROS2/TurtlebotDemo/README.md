@@ -11,10 +11,10 @@ This tutorial assumes that your system is Ubuntu, with the Xenial version or a m
 Download this [Dockerfile](https://github.com/CARMinesDouai/PhaROS2/blob/master/ROS2/TurtlebotDemo/Dockerfile).  
 Then to build the docker image, use the following command :
 ```bash
-$ sudo docker build -t ros2:turtlebotdemo pathToDockerfileDirectory
+$ sudo docker build -t ros2:turtlebotdemo /path_of/directory_containing/Dockerfile
 ```
 Command explanation :
-- **"pathToDockerfileDirectory" needs to be replaced by the path to the directory containing the Dockerfile**.
+- **Replace "/path_of/directory_containing/Dockerfile" by the path of the directory containing the Dockerfile**.
 - "ros2" will be the image repository, you can change this if you want.
 - "turtlebotdemo" will be the image tag; you can change this if you want.
 
