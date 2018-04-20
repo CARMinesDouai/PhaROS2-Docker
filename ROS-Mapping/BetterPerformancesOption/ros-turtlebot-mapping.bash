@@ -15,6 +15,10 @@ sudo docker run -d --rm \
     roslaunch adaptive_local_planner simple_exploration_karto.launch
 containerId=$(sudo docker container ps -l -q --no-trunc)
 
-#Launching RVIZ on the host, when user exit RVIZ the container will stop and be removed
+#Launching RVIZ on the host
 ROS_MASTER_URI=http://$containerIP:11311 rviz
+
+#When user exit RVIZ the map will be saved, then the container will stop and be removed
+ROS_MASTER_URI=http://$containerIP:11311 rosrun map_server map_saver -f /tmp/ros_map
+echo "Map saved to: /tmp/ros_map.pgm & /tmp/ros_map.yml"
 sudo docker container stop $containerId
