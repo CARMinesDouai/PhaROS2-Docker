@@ -20,8 +20,9 @@ RUN apt-get update && apt-get install -y ros-kinetic-rviz
 
 #Clone all the packages in the github repository and rename it to src
 RUN git clone https://github.com/lxsang/ROS-packages && rm -r ~/rosws/src && mv ROS-packages ~/rosws/src
-#Ignore this package for now
+#Ignore these packages for now
 RUN touch ~/rosws/src/pharos_probabilistic_merging/CATKIN_IGNORE
+RUN touch ~/rosws/src/dslam/CATKIN_IGNORE
 
 #Generate dependent messages
 RUN ./opt/ros/kinetic/bin/catkin_make multi_master_bridge_generate_messages -C ~/rosws
