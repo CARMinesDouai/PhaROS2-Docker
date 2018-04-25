@@ -1,4 +1,5 @@
 <launch>
+
  <!-- Turtlebot -->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
   <include file="$(find adaptive_local_planner)/launch/includes/move_base.launch.xml" />
@@ -16,10 +17,7 @@
   <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0.110 0 0.02478 0 0 0 1 base_link laser 50" />
 
  <!-- AMCL -->
-  <node name="laser_filter" pkg="turtlebot_navigation" type="laser_footprint_filter" />
-  <include file="$(find turtlebot_navigation)/config/amcl_turtlebot.launch">
-    <arg name="scan_topic" value="scan_filtered" />
-  </include>
+  <include file="$(find turtlebot_navigation)launch/includes/amcl/amcl.launch.xml"/>
 
  <!-- RVIZ -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find adaptive_local_planner)/rviz/robot_navigation.rviz"/>
