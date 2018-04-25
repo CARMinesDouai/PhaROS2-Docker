@@ -2,6 +2,7 @@
  <!-- Turtlebot -->
   <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
   <include file="$(find adaptive_local_planner)/launch/includes/move_base.launch.xml" />
+  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0.110 0 0.02478 0 0 0 1 base_link laser 50" />
 
  <!-- Laser -->
   <node  pkg="urg_node" type="urg_node" name="urg_node" >
