@@ -1,16 +1,26 @@
-#Docker image for navigating in a map with a Turtlebot
-FROM osrf/ros:kinetic-desktop-full-xenial
+<launch>
 
-#Install the default ros navigation stack and suitesparse library needed by Karto SLAM
-RUN apt-get update && apt-get install -y ros-kinetic-navigation libsuitesparse-dev
-#Install the turtlebot dependencies
-RUN apt-get update && apt-get install -y ros-kinetic-kobuki ros-kinetic-kobuki-core
-#Install necessary packages for the turlebot and the laser drivers
-RUN apt-get update && apt-get install -y ros-kinetic-turtlebot-* ros-kinetic-urg-node
-#Install rviz
-RUN apt-get update && apt-get install -y ros-kinetic-rviz
+ <!-- Turtlebot -->
+  <include file="$(find turtlebot_bringup)/launch/minimal.launch" />
 
-#Wget the navigation launchfile from github
-RUN apt-get update && apt-get install -y wget
-RUN wget -O /opt/ros/kinetic/share/turtlebot_navigation/launch/turtlebot_navigation_in_map.launch https://raw.githubusercontent.com/CARMinesDouai/PhaROS2/master/ROS-Navigation/launch/turtlebot_navigation_in_map.launch
-RUN mkdir /opt/ros/kinetic/share/turtlebot_navigation/rviz && wget -O /opt/ros/kinetic/share/turtlebot_navigation/rviz/robot_navigation.rviz https://raw.githubusercontent.com/CARMinesDouai/PhaROS2/master/ROS-Navigation/rviz/robot_navigation.rviz
+ <!-- Laser -->
+  <node  pkg="urg_node" type="urg_node" name="urg_node" >
+    <param name="angle_min" value="-1.6"/>
+    <param name="angle_max" value="1.6"/>
+  </node>
+  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 base_link laser 50" />
+
+ <!-- Map server -->
+  <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+ <!-- AMCL -->
+  <include file="$(find turtlebot_navigation)launch/includes/amcl/amcl.launch.xml"/>
+
+ <!-- Move base -->
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
+
+ <!-- RVIZ -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_navigation)/rviz/robot_navigation.rviz"/>
+
+</launch>
