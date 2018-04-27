@@ -17,7 +17,7 @@
   <include file="$(find turtlebot_navigation)launch/includes/amcl/amcl.launch.xml"/>
 
  <!-- Move base -->
-  <include file=""$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"" />
+  <include file="$(find turtlebot_navigation)/launch/includes/move_base.launch.xml"/>
 
  <!-- RVIZ -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_navigation)/rviz/robot_navigation.rviz"/>
