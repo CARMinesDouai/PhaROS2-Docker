@@ -1,10 +1,6 @@
 #Docker image for navigating in a map with a Turtlebot
 FROM osrf/ros:kinetic-desktop-full-xenial
 
-#Arguments for building
-#ARG PYTHONPATH=/opt/ros/kinetic/lib/python2.7/dist-packages
-#ARG CMAKE_PREFIX_PATH=/opt/ros/kinetic
-
 #Install the default ros navigation stack and suitesparse library needed by Karto SLAM
 RUN apt-get update && apt-get install -y ros-kinetic-navigation libsuitesparse-dev
 #Install the turtlebot dependencies
