@@ -12,7 +12,7 @@ sudo docker container create -it \
     --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env TURTLEBOT_MAP_FILE=/tmp/turtlebot_map.yaml \
     ros:navigation-in-map \
-    roslaunch adaptive_local_planner turtlebot_navigation_in_map.launch
+    roslaunch turtlebot_navigation turtlebot_navigation_in_map.launch
 containerId=$(sudo docker container ps -l -q --no-trunc)
 
 #Transfering the map to the container
