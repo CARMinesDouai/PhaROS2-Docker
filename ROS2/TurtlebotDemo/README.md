@@ -2,7 +2,7 @@
 This tutorial assumes that your system is Ubuntu, with the Xenial version or a more recent one.  
 
 ### Prerequisites
-- You need to have Docker properly installed on your computer. If needed use my [Docker installation tutorial](https://github.com/CARMinesDouai/PhaROS2/blob/master/Docker%20Installation/DockerInstallationTutorial.md).
+- You need to have Docker properly installed on your computer. If needed use my [Docker installation tutorial](https://github.com/CARMinesDouai/PhaROS2/tree/master/Docker%20Installation).
 - You need a joystick and a turtlebot.
 ### Sources
 *My sources were the [ROS2 installation guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians) and the [ROS2 Turtlebot demo guide](https://github.com/ros2/turtlebot2_demo)*
