@@ -8,7 +8,8 @@
     <param name="angle_min" value="-1.6"/>
     <param name="angle_max" value="1.6"/>
   </node>
-  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 base_link laser 50" />
+  <!-- This node contains the position of the laser relative to the center of the turtlebot. z (here 0.02478) is almost never null and x (here 0.110) is often not null too. -->
+  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0.110 0 0.02478 0 0 0 1 base_link laser 50" />
 
  <!-- Map server -->
   <arg name="map_file" default="$(env TURTLEBOT_MAP_FILE)"/>
