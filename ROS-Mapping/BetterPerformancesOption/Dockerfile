@@ -1,6 +1,5 @@
 #Docker image for Mapping with a Turtlebot
 
-
 #The initial image already has ROS kinetic installed
 FROM ros:kinetic
 
