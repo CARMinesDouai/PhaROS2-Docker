@@ -1,4 +1,6 @@
 #Docker image for navigating in a map with a Turtlebot
+
+#The initial image already has ROS kinetic installed, as well as the desktop libraries of xenial
 FROM osrf/ros:kinetic-desktop-full-xenial
 
 #Install the default ros navigation stack and suitesparse library needed by Karto SLAM
