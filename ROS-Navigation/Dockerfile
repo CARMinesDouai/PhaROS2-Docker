@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y ros-kinetic-turtlebot-* ros-kinetic-urg
 #Install rviz
 RUN apt-get update && apt-get install -y ros-kinetic-rviz
 
-#Wget the navigation launchfile from github
+#Downloading the navigation launchfile from github
 RUN apt-get update && apt-get install -y wget
 RUN wget -O /opt/ros/kinetic/share/turtlebot_navigation/launch/turtlebot_navigation_in_map.launch https://raw.githubusercontent.com/CARMinesDouai/PhaROS2/master/ROS-Navigation/launch/turtlebot_navigation_in_map.launch
 RUN mkdir /opt/ros/kinetic/share/turtlebot_navigation/rviz && wget -O /opt/ros/kinetic/share/turtlebot_navigation/rviz/robot_navigation.rviz https://raw.githubusercontent.com/CARMinesDouai/PhaROS2/master/ROS-Navigation/rviz/robot_navigation.rviz
