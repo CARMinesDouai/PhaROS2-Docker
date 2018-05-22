@@ -1,10 +1,10 @@
 #!/bin/bash
 #This script will use the ros:navigation-in-map docker image to navigate in a already mapped room with a turtlebot and a laser
 
-#If this script isn't called with exactly one argument, it will return an error message specifying its requirement
+#Error if script doesn't have exactly one argument
 if [ $# -ne 1 ]
  then
-  echo -e "\e[1;31mERROR ! This script needs one argument : the path to the premade map (without any extension).\e[0m"
+  echo -e "\e[1;31mERROR! This script needs one argument : the path to the premade map (without any extension).\e[0m"
   return 1
 fi
 
