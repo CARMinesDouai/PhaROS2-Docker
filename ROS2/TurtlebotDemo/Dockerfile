@@ -1,4 +1,6 @@
 #This Docker image goal is to run a Turtlebot demo with ROS2
+
+#The initial image already has ROS2 installed
 FROM osrf/ros2:ardent-basic
 
 #Setup ROS1 Sources
