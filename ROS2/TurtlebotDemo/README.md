@@ -3,8 +3,8 @@ At the end of this tutorial you will be able to control a turtlebot with a joyst
 
 ### Prerequisites
 - This tutorial assumes that your system is Ubuntu, with the Xenial version or a more recent one.
-- You need to have Docker properly installed on your computer. If needed use my [Docker installation tutorial](https://github.com/CARMinesDouai/PhaROS2/tree/master/Docker%20Installation).
 - You need a joystick and a turtlebot.
+- You need to have Docker properly installed on your computer. If needed use my [Docker installation tutorial](https://github.com/CARMinesDouai/PhaROS2/tree/master/Docker%20Installation).
 
 ## Building the ROS2-Turtlebot-Demo docker image
 Download this [Dockerfile](https://github.com/CARMinesDouai/PhaROS2/blob/master/ROS2/TurtlebotDemo/Dockerfile), which describes a docker image containing the packages to teleop a turtlebot with ROS2.  
