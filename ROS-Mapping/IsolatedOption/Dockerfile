@@ -1,4 +1,6 @@
 #Docker image for Mapping with a Turtlebot
+
+#The initial image already has ROS kinetic installed, as well as the desktop libraries of xenial
 FROM osrf/ros:kinetic-desktop-full-xenial
 
 #Arguments for building
