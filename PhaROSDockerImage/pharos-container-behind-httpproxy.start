@@ -1,0 +1,21 @@
+#!/bin/bash
+#This script is used to start a container from the pharos:kinetic docker image with the ability to start the PhaROS GUI
+
+#Running the container in the background
+sudo docker container run -d --rm \
+    --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    pharos:kinetic \
+    /bin/bash -c "while true; do sleep 1d; done"
+containerId=$(sudo docker container ps -l -q --no-trunc)
+
+#Opening up xhost to the container, allowing PhaROS to start its GUI
+xhost +local:`sudo docker inspect --format='{{ .Config.Hostname }}' $containerId`
+
+#Starting a shell session in the container
+sudo docker container exec -it $containerId /bin/bash
+
+#Closing xhost access opened for the container
+xhost -local:`sudo docker inspect --format='{{ .Config.Hostname }}' $containerId`
+
+#Stoping and removing container
+sudo docker container stop $containerId
