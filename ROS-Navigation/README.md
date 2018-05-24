@@ -7,8 +7,11 @@
 - You need to have Docker properly installed on your computer. If needed use my [Docker installation tutorial](https://github.com/CARMinesDouai/PhaROS2/tree/master/Docker%20Installation).
 - You need to have already mapped the room. If needed use my [Mapping with a Turtlebot and Docker tutorial](https://github.com/CARMinesDouai/PhaROS2/tree/master/ROS-Mapping).
 
-## Building the ROS-navigation-in-map docker image
-Download this [Dockerfile](https://github.com/CARMinesDouai/PhaROS2/blob/master/ROS-Navigation/Dockerfile), which describes a docker image containing the necessary packages for navigating a turtlebot inside a mapped room through RVIZ.  
+## Building the ROS-navigation-in-map docker image    
+First you need to have previously built the ROS-mapping-desktop docker image. [Here is the guide on how to build it](https://github.com/CARMinesDouai/PhaROS2/tree/master/ROS-Mapping#a-building-the-ros-mapping-desktop-docker-image) if you haven't built this image already.       
+*(Note: the ROS-mapping-desktop docker image is needed because it is the initial image of the ROS-navigation-in-map docker image build.)*
+
+Now for the ROS-navigation-in-map docker image itself download this [Dockerfile](https://github.com/CARMinesDouai/PhaROS2/blob/master/ROS-Navigation/Dockerfile). It describes a docker image containing the necessary packages for navigating a turtlebot inside a mapped room through RVIZ.     
 Then to build the docker image, use the following command :
 ```bash
 $ sudo docker build -t ros:navigation-in-map /path_of/directory_containing/the_Dockerfile
