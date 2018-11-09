@@ -1,4 +1,4 @@
-#Some example and explanation
+# Some example and explanation
 
 In this document, we have two computer (A and B)
 Shells is named like this:
@@ -7,7 +7,7 @@ Shells is named like this:
 3. Shell B>A -> First terminal on computer B
 4. Shell B>B -> Second terminal on computer B
 
-#General
+# General
 I've define some `alias`
 ```shell
 $ ros1ify
@@ -24,14 +24,14 @@ $ ros2ify
 #source /opt/ros/bouncy/setup.bash
 ```
 
-##Show topics and informations
+## Show topics and informations
 To show information about topic, we need a dedicated terminal
 ```shell
 $ ros2ify
 ```
 to have access to ROS2 commands
 
-##Commands on ROS2 nodes
+## Commands on ROS2 nodes
 
 To show the differents topic actually see by ROS2
 ```shell
@@ -47,7 +47,7 @@ To show the message emited on a topic
 $ ros2 topic show *un topic*
 ```
 
-#Kobuki
+# Kobuki
 This expreriment permit to run a Trutlebot2 with a dedicated computer for Joystick part and Kobuki part.
 
 First, on the kobuki computer, we need to have *udev* rule correctly set
@@ -57,11 +57,11 @@ $ rosrun kobuki_ftdi create_udev_rules
 $ exit
 ```
 
-##Installation
+## Installation
  - PC A will handle Joystick.
  - PC B will hanlde  Kobuki.
 
-##With Launch file
+## With Launch file
 The default launch file permit to start all node but it will be on the same computer.
 
 ```shell
@@ -69,7 +69,7 @@ $ ros2ify
 $ launch `ros2 pkg prefix turtlebot2_teleop`/share/turtlebot2_teleop/launch/turtlebot_joy.py
 ```
 
-###LExplanation of Launch file
+### LExplanation of Launch file
 One of functionality of ROS2 is python launch file. Let read this file
 
 ```python
@@ -113,8 +113,8 @@ def launch(launch_descriptor, argv):
 
 
 
-##Without launch file (Separated nodes)
-###Start of Kobuki node
+## Without launch file (Separated nodes)
+### Start of Kobuki node
 First we will create the Kobuki nodes.
 The Kobuki librairy is is ROS1... So we need to load ROS1 with `$ ros1ify` to have access to these librairies.
 
@@ -133,7 +133,7 @@ $ ros2 node list
 ```
 We should see `kobuki_node`
 
-###Start of Joystick Node
+### Start of Joystick Node
 
 It's the first node to handle Joystick
 By default, the joystick used will be */dev/js0*
@@ -157,7 +157,7 @@ Normally, by pressing **RB** of controller, the Kobuki will go forward. We will 
 
 **To close a node, we will use an ```CTRL+C``` in different opened shell**
 
-##Why it work?
+## Why it work?
 To understand this, we will look the command:
 ```shell
 #Shell A>C ou B>B
@@ -168,7 +168,7 @@ It's show all three nodes is seen by the two computers. But, we have run (based 
 ROS2 use * multicast* to share nodes between computer. So when we have start a node, it send a message over he network to share is topics. So all node know each others with this process.
 
 
-#ROS2 -> ROS1 Bridge
+# ROS2 -> ROS1 Bridge
 It's possible to have a bridge between ROS
  and ROS1. This bridge will share only some topic. When a ROS1 node will ask for a topic, then the topic will be shared
  
@@ -208,10 +208,10 @@ Shell A>B should say
 This mean the */chatter* topic is share between ROS2 and ROS1
 
 
-#Interaction with Gazebo
+# Interaction with Gazebo
 By following [this link](http://gazebosim.org/tutorials?tut=ros2_installing&branch=ros2), you will have an gazebo simulation with an bot who can go forward or turn.
 
-##Explanation
+## Explanation
 I supposed you have follow the *gazebosim* tutorial,so you have this folder: `~/ros2_gazebo_demos`
 
 We can start *gazebo* with this world file `gazebo_ros_diff_drive_demo.world`
@@ -229,7 +229,7 @@ $ ros2 topic pub /demo/cmd_demo geometry_msgs/Twist '{linear: {x: 1.0}}' -1 # Th
 $ ros2 topic pub /demo/cmd_demo geometry_msgs/Twist '{angular: {z: 0.1}}' -1 # The robot will turn in Gazebo
 ```
 
-##Explanation of world file
+## Explanation of world file
 This explanation is not complete. But here we have the main part. To understand all of the `world`file, go learn `gazebo-devel`
 
 This ligne permit to convert the topic received message in gazebo physics instruction.

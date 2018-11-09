@@ -13,7 +13,7 @@
 - Discovery
 
 
-#What have changed between ROS1 & ROS2
+# What have changed between ROS1 & ROS2
 
 1. Compatibility
 	Linux, MAC OS, Windows support ROS2 now.
@@ -28,25 +28,25 @@
 	It's possible to write real-time nodes in ROS2 due to the internal process of DDS
 	[This link](https://index.ros.org/doc/ros2/Real-Time-Programming/) permit to install and run a pendulum demo
 	
-#ROS2 & DDS
+# ROS2 & DDS
 DDS: Data Distribution Service
 
-##DDS Discovery
+## DDS Discovery
 The goal of DDS is to 'replace' the master
 So ROS2 is fully distributed and does'nt have a central or critical node.
 
 
-##Pattern Observer
+## Pattern Observer
 With ROS2 and DDS, we have two way of communication between process.
  - Inter-process communication. It's possible to have an share pointers between process so we directly deal with the process without network
  - Use **multicast** over network. By default, we share a node over network. The communication is based on *UDP* and not TCP.
 The best way to communicate is define by the DDS.
 
 
-#ROS2 et son interface *middleware*
+# ROS2 et son interface *middleware*
 ROS2 directly build on DDS. Is this DDS and is implementation who will choose the best way to communicate with other (depends on local aspect or over the network)
 
-#ROS2 in few lines
+# ROS2 in few lines
 1. ROS2 network is separate in 255 domain with `ROS_DOMAIN_ID` environment variable.
 2. When a node start, he noitify is status to other node through *multicast*. He also share is topic.
 	Others nodes in the same *ROS_DOAMIN_ID* answer and share these topics
